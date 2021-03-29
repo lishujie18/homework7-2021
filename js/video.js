@@ -19,12 +19,12 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	Vid.playbackRate -= 0.05;
+	Vid.playbackRate *= 0.95;
 	console.log("new speed: " + Vid.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	Vid.playbackRate += 0.05;
+	Vid.playbackRate /= 0.95;
 	console.log("new speed: " + Vid.playbackRate);
 });
 
@@ -35,11 +35,10 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 	else {
 		Vid.currentTime = 0;
+		Vid.play();
 	}
 
 	console.log('current time: ' + Vid.currentTime + 'seconds');
-
-	Vid.play();
 
 });
 
